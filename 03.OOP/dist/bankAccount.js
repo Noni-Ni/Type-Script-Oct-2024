@@ -1,56 +1,80 @@
 class BankAccount {
     constructor() {
+        this.id = BankAccount.nextId++;
         this.balance = 0;
-        this.interestRate = 0.02;
-        this.id += 1;
-        BankAccount.idCounter += 1;
-        this.balance = 0;
-        this.interestRate = 0.02;
     }
-    set setInterestRate(interestR) {
-        this.interestRate = interestR;
+    getId() {
+        return this.id;
     }
-    get getInterest() {
-        return this.interestRate;
+    //getBalance(): number {
+    //   return this.balance;
+    //}
+    static setInterestRate(rate) {
+        BankAccount.interestRate = rate;
+    }
+    getInterest(years) {
+        return this.balance * BankAccount.interestRate * years;
+    }
+    deposit(amount) {
+        this.balance += amount;
+    }
+}
+BankAccount.nextId = 1;
+BankAccount.interestRate = 0.02;
+class Bank {
+    constructor() {
+        this.accounts = new Map();
+    }
+    create() {
+        const account = new BankAccount();
+        this.accounts.set(account.getId(), account);
+        console.log(`Account ID${account.getId()} created`);
     }
     deposit(id, amount) {
-        this.balance += amount;
-        console.log(`Deposited ${amount} to ID${id}`);
-    }
-}
-let clients = [];
-function testClient(data) {
-    let params = data.split(' ');
-    let command = params[0];
-    let id = 0;
-    let amount = 0;
-    let interest = 0;
-    let years = 0;
-    if (command === 'Create') {
-        let newAccount = new BankAccount();
-        clients.push(newAccount);
-        console.log(`Account ID${BankAccount.idCounter} created`);
-    }
-    else if (command === 'Deposit') {
-        id = Number(params[1]);
-        amount = Number(params[2]);
-        for (let index = 0; index < clients.length; index++) {
-            if (id === clients[index].id) {
-                clients[index].deposit(id, amount);
-            }
+        const account = this.accounts.get(id);
+        if (account) {
+            account.deposit(amount);
+            console.log(`Deposited ${amount} to ID${id}`);
+        }
+        else {
+            console.log("Account does not exist");
         }
     }
-    else if (command === 'SetInterest') {
-        clients[0]?.setInterestRate(Number(params[1]));
+    setInterest(rate) {
+        BankAccount.setInterestRate(rate);
+        //console.log(`Interest rate set to ${rate}`);
     }
-    else if (command === 'GetInterest') {
-        id = Number(params[1]);
-        years = Number(params[2]);
-        for (let index = 0; index < clients.length; index++) {
+    getInterest(id, years) {
+        const account = this.accounts.get(id);
+        if (account) {
+            const interest = account.getInterest(years);
+            console.log(`${interest.toFixed(2)}`);
+        }
+        else {
+            console.log("Account does not exist");
         }
     }
+    end() {
+        this.accounts.clear();
+    }
 }
-testClient('Create');
-testClient('Deposit 1 20');
-testClient('GetInterest 1 10');
+// Test client code example
+//const bank = new Bank();
+//bank.create();
+//bank.deposit(1, 20);
+//bank.getInterest(1, 10);
+//bank.setInterest(0.015);
+//bank.getInterest(1, 1);
+const bank2 = new Bank();
+bank2.create();
+bank2.create();
+bank2.deposit(1, 20);
+bank2.deposit(3, 20);
+bank2.deposit(2, 10);
+bank2.setInterest(1.5);
+bank2.getInterest(1, 1);
+bank2.getInterest(2, 1);
+bank2.getInterest(3, 1);
+bank2.end();
+bank2.deposit(3, 20);
 //# sourceMappingURL=bankAccount.js.map
