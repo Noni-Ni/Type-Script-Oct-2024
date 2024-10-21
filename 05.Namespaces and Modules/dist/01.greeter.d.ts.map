@@ -1,0 +1,1 @@
+{"version":3,"file":"01.greeter.d.ts","sourceRoot":"","sources":["../src/01.greeter.ts"],"names":[],"mappings":"AAAA,yBAAiB,OAAO,CAAA;IACpB,UAAiB,QAAQ,CAAC,CAAC;QACvB,YAAY,IAAI,MAAM,CAAC;QACvB,UAAU,CAAC,IAAI,EAAE,CAAC,GAAG,MAAM,CAAC;KAC/B;CACJ"}

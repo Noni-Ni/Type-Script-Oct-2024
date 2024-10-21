@@ -1,0 +1,1 @@
+{"version":3,"file":"02.deliveries.d.ts","sourceRoot":"","sources":["../src/02.deliveries.ts"],"names":[],"mappings":"AAAA,yBAAiB,gBAAgB,CAAA;IAC7B,UAAiB,QAAQ;QACrB,WAAW,CAAC,YAAY,EAAE,MAAM,EAAE,OAAO,EAAE,OAAO,GAAG,MAAM,CAAC;QAC5D,aAAa,CAAC,YAAY,EAAE,MAAM,GAAG,MAAM,CAAC;QAC5C,aAAa,IAAI,MAAM,CAAC;KAC3B;CACJ"}
