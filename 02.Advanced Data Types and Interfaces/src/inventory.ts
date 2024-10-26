@@ -21,7 +21,7 @@ function inventory(data: string[]): string {
     let result: Array<Hero> = []
     data.map(str => {
         let [name, level, items] = str.split('/')
-        let hero = new Hero(name, Number(level), items.split(', '))
+        let hero : HeroType = new Hero(name, Number(level), items.split(', '))
         result.push(hero)
     })
     return result.reverse().map(el => el.printHero()).join('\n')

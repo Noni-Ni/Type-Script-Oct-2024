@@ -1,9 +1,11 @@
-function personalInfo( firstName1: string, lastName1: string, age1: string){
-    interface PersonalInfo {
-        firstName: string,
-        lastName: string,
-        age: number
-    }
+interface PersonalInfo {
+    firstName: string,
+    lastName: string,
+    age: number
+}
+
+function personalInfo( firstName1: string, lastName1: string, age1: string) : PersonalInfo{
+    
 
     let person1Info : PersonalInfo = {
         firstName: firstName1,

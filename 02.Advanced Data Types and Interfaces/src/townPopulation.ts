@@ -1,6 +1,10 @@
+type TownPopulationType = {
+    [key: string] : number;
+}
+
 function townPopulation(data: string[]): void {
 
-    let townPopulation = {}
+    let townPopulation : TownPopulationType = {}
    
     data.map(el => {
         let [townName, population] = el.split(' <-> ')

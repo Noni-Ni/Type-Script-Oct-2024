@@ -1,4 +1,4 @@
-function lowestPrice(data: string[]) {
+function lowestPrice(data: string[]) : void {
     let products = []
     interface Product {
         nameP: string;
