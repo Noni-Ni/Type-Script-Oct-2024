@@ -1,18 +1,19 @@
-function mathOperation(a: number, b: number, c: string):any{
-    let operations: string[] = ['+', '-', '*', '/', '%', '**'];
+function mathOperation(a: number, b: number, c: string): number {
+    let result = 0;
     if(c == '+'){
-        return a + b
+        result =  a + b
     }else if( c == '-'){
-        return a - b
+        result =  a - b
     }else if( c == '*'){
-        return a * b
+        result =  a * b
     }else if( c == '/'){
-        return a / b
+        result =  a / b
     }else if( c == '%'){
-        return a % b
+        result =  a % b
     }else if( c == '**'){
-        return a ** b
+        result =  a ** b
     }
+    return result;
 }
 
 console.log(mathOperation(5, 6, '+'))

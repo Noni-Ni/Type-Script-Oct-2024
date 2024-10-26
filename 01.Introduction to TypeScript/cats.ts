@@ -1,4 +1,4 @@
-function cats(arr: string[]): any{
+function cats(arr: string[]): void {
 
     class Cat {
         name: string

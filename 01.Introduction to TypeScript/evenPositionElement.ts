@@ -7,7 +7,7 @@ function even(elements: string[]): string{
             evenStrArr.push(elements[index])
         }
     }
-    let evenStr = evenStrArr.join(' ');
+    let evenStr: string = evenStrArr.join(' ');
     return evenStr.trim()
 }
 

@@ -1,4 +1,4 @@
-function employees(arr: string[]): any {
+function employees(arr: string[]): string {
     let result: string[] = []
     for (let index = 0; index < arr.length; index++) {
         const element: string = arr[index];

@@ -1,5 +1,5 @@
-function aggregateElements(arr: number[]): any{
-    let result = [];
+function aggregateElements(arr: number[]): void {
+    
     let sum: number = 0;
     let sum2: number = 0;
     let strArr: string[] = []
