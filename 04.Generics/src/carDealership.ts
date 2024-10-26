@@ -9,7 +9,7 @@ interface Actions<U>{
 
 class CarDealership<T, U> implements Dealership<T>, Actions<U> {
     public modelsSold: { [key: string]: U } = {};
-    public soldCars = 0;
+    public soldCars : number = 0;
     public dealershipName: T
     constructor( deName : T){
         this.dealershipName = deName;
