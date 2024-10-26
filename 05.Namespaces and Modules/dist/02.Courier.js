@@ -6,7 +6,7 @@ class Courier {
         this.placesToVisit = placesToVisit;
     }
     newCustomer(customerName, visited = false) {
-        let match = this.placesToVisit.find(el => Object.keys(el)[0] === customerName);
+        let match = this.placesToVisit.find(el => el.customerName === customerName);
         if (match) {
             throw new Error(`${customerName} is already a customer of yours!`);
         }
